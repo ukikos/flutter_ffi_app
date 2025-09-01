@@ -15,4 +15,14 @@ typedef struct Person {
 	Address* address;
 } Person;
 
+int sum(int a, int b);
+
+int sumLongRunning(int a, int b);
+
+Person* getPerson();
+
+void freePerson();
+
+char* getPersonMessage();
+
 #endif

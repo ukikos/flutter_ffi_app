@@ -26,6 +26,8 @@ Person* getPerson() {
 	person->lastName = "Ivanov\0";
 	person->age = 30;
 	person->address = address;
+
+	return person;
 }
 
 void freePerson(Person* person) {

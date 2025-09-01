@@ -128,19 +128,9 @@ if(NOT CMAKE_BUILD_TYPE MATCHES "Debug")
 endif()
 
 # Bundle prebuilt libraries (custom)
-set(prebuilt_libraries
-  "${CMAKE_CURRENT_SOURCE_DIR}/prebuilt_shared_libraries/libffitest/libffitest.so"
-)
 
 foreach(bundled_library ${prebuilt_libraries})
   install(FILES "${bundled_library}"
     DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
     COMPONENT Runtime)
 endforeach(bundled_library)
-
-# # Link prebuilt libraries to target (custom) crash build
-# set(prebuilt_bundled_libraries
-#   "${INSTALL_BUNDLE_LIB_DIR}/libffitest.so"
-# )
-
-# target_link_libraries(${BINARY_NAME} PRIVATE ${prebuilt_bundled_libraries})

@@ -24,3 +24,11 @@ target_link_libraries(${BINARY_NAME} PRIVATE flutter)
 target_link_libraries(${BINARY_NAME} PRIVATE PkgConfig::GTK)
 
 target_include_directories(${BINARY_NAME} PRIVATE "${CMAKE_SOURCE_DIR}")
+
+# Link dependency prebuilt libraries to target (custom)
+set(prebuilt_libraries
+  "${CMAKE_SOURCE_DIR}/prebuilt_shared_libraries/libffitest/libffitest.so"
+)
+set(prebuilt_libraries "${prebuilt_libraries}" PARENT_SCOPE)
+
+target_link_libraries(${BINARY_NAME} PRIVATE ${prebuilt_libraries})
